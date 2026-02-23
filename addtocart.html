@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        .cart {
+            border: 1px solid #333;
+            padding: 15px;
+            width: 300px;
+        }
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Product</h2>
+<div class="product">
+    <h3>Laptop</h3>
+    <p>Price: Rs. <span id="price">50000</span></p>
+    <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<h2>Cart</h2>
+<div class="cart">
+    <p>Items in Cart: <span id="count">0</span></p>
+    <p>Total Price: Rs. <span id="total">0</span></p>
+</div>
+
+<script>
+    let count = 0;
+    let total = 0;
+
+    function addToCart() {
+        let price = parseInt(document.getElementById("price").innerText);
+        count++;
+        total += price;
+
+        document.getElementById("count").innerText = count;
+        document.getElementById("total").innerText = total;
+    }
+</script>
+
+</body>
+</html>
